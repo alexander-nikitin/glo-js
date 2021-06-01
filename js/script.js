@@ -4,6 +4,14 @@ let addExpenses;
 let deposit;
 let mission;
 let period;
+let expences1;
+let expences2;
+let expences3;
+let expences4;
+let amount1;
+let amount2;
+let amount3;
+let amount4;
 
 money = 100000;
 income = 'фриланс';
@@ -36,16 +44,6 @@ console.log('addExpenses: ' + addExpenses);
 deposit = confirm('Есть ли у вас депозит в банке?');
 console.log('deposit: ' + deposit);
 
-let expences1;
-let expences2;
-let expences3;
-let expences4;
-let amount1;
-let amount2;
-let amount3;
-let amount4;
-
-
 expences1 = prompt('Введите обязательную статью расходов.');
 amount1 = prompt('Во сколько это обойдется?');
 expences2 = prompt('Введите обязательную статью расходов.');
@@ -65,9 +63,9 @@ budgetDay = budgetMonth / 30;
 
 if ( budgetDay >= 1200 ) {
   console.log('У вас высокий уровень дохода');
-} else if ( budgetDay >=600 && budgetDay < 1200) {
+} else if ( budgetDay >=600) {
   console.log('У вас средний уровень дохода');
-} else if ( budgetDay < 600 && budgetDay >= 0 ) {
+} else if ( budgetDay < 600) {
   console.log('К сожалению у вас уровень дохода ниже среднего');
 } else {
   console.log('Что-то пошло не так');
