@@ -67,3 +67,9 @@ let getStatusIncome = function (a) {
 }
 
 getStatusIncome();
+
+let showTypeOf = function (data) {
+  console.log(typeof(data));
+}
+
+showTypeOf(money);
