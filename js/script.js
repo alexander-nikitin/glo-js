@@ -8,10 +8,7 @@ let addExpenses;
 let deposit;
 let mission;
 let period;
-let expences1;
-let expences2;
-let amount1;
-let amount2;
+let expences = [];
 let budgetDay;
 
 income = 'фриланс';
@@ -39,11 +36,8 @@ let getExpensesMonth = function () {
   let sum = 0;
 
   for (let i = 0; i < 2; i++) {
-    if (i === 0) {
-      expences1 = prompt('Введите обязательную статью расходов.', 'Статья расходов 1');
-    } else if (i === 1) {
-      expences2 = prompt('Введите обязательную статью расходов.', 'Статья расходов 2');
-    }
+    expences[i] = prompt('Введите обязательную статью расходов.', 'Статья расходов');
+
     sum += +prompt('Во сколько это обойдется?')
   }
   
