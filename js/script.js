@@ -24,22 +24,21 @@ let appData = {
   budgetDay: 0,
   budgetMonth: 0,
   expensesMonth: 0,
+  getExpensesMonth: function () {
+    for (let i = 0; i < 2; i++) {
+      let expencesKey = prompt('Введите обязательную статью расходов.', 'Статья расходов');
+      appData.expences[expencesKey] = +prompt('Во сколько это обойдется?');
+    }
+
+    for ( key in appData.expences) {
+      appData.expensesMonth += appData.expences[key];
+    };
+  },
   asking: function () {
     let addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую', 'Такси, Кафе, Доставка еды');
     appData.addExpenses = addExpenses.toLowerCase().split(', ');
     appData.deposit = confirm('Есть ли у вас депозит в банке?');
-    let getExpensesMonth = function() {
-    
-      for (let i = 0; i < 2; i++) {
-        let expencesKey = prompt('Введите обязательную статью расходов.', 'Статья расходов');
-        appData.expences[expencesKey] = +prompt('Во сколько это обойдется?');
-      }
-
-      for ( key in appData.expences) {
-        appData.expensesMonth += appData.expences[key];
-      };
-    }
-    getExpensesMonth();
+    appData.getExpensesMonth();
   },
   getBudget: function () {
     appData.budgetMonth =  appData.budget - appData.expensesMonth;
