@@ -31,10 +31,10 @@ let appData = {
       let expencesKey;
       do {
         expencesKey = prompt('Введите обязательную статью расходов.', 'Статья расходов')
-      } while (isNumber(expencesKey));
+      } while (isNumber(expencesKey) || expencesKey == '');
       do {
         appData.expences[expencesKey] = +prompt('Во сколько это обойдется?');
-      } while (!isNumber(appData.expences[expencesKey]));
+      } while (!isNumber(appData.expences[expencesKey]) || appData.expences[expencesKey] == '');
     }
     for ( key in appData.expences) {
       appData.expensesMonth += appData.expences[key];
@@ -46,17 +46,17 @@ let appData = {
       let cashIncome;
       do {
         itemIncome = prompt('Какой у вас дополнительный заработок?', 'Такси');
-      } while (isNumber(itemIncome));
+      } while (isNumber(itemIncome) || itemIncome == '');
       do {
         cashIncome = +prompt('Сколько в месяц вы на этом зарабатываете?', '10000');
-      } while (!isNumber(cashIncome));
+      } while (!isNumber(cashIncome) || cashIncome == '');
       appData.income[itemIncome] = cashIncome;
     }
 
     let addExpenses;
     do {
       addExpenses = prompt('Перечислите возможные расходы за рассчитываемый период через запятую', 'Такси, Кафе, Доставка еды');
-    } while (isNumber(addExpenses));
+    } while (isNumber(addExpenses) || addExpenses == '');
     appData.addExpenses = addExpenses.toLowerCase().split(', ');
     appData.deposit = confirm('Есть ли у вас депозит в банке?');
     appData.getExpensesMonth();
@@ -93,7 +93,7 @@ let appData = {
       appData.depositPercent;
       do {
         appData.depositPercent = +prompt('Какой годовой процент у вашего депозита?', 9);
-      } while (!isNumber(cashIncome));
+      } while (!isNumber(cashIncome) || appData.depositPercent == '');
       appData.depositMoney = +prompt('Какая сумма у вас лежит на депозите?', 10000);
     }
   },
