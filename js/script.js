@@ -70,7 +70,6 @@ let appData = {
     for (let i = 0; i < allInputsText.length; i++) {
       allInputsText[i].removeAttribute('disabled', 'false');
       allInputsText[i].value = '';
-      console.log(this);
       startBtn.style.display = 'block';
       resetBtn.style.display = 'none';
     }
